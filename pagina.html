@@ -1,0 +1,158 @@
+<html>
+<head>
+    <title>Plataforma Estudiantil BUAP</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        h1 {
+            text-align: center;
+            color: #333333;
+        }
+        
+
+
+
+
+
+
+        .mmmenu {
+            width: 99%;
+            height: 65px;
+            background-color: #00395e;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+        }
+        .mmmenu img{
+            margin: 30px;
+        }
+
+
+        .menu {
+            width: 80%;
+            height: 65px;
+            background-color: #00395e;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+        .menu ul {
+
+            list-style: none; /* Elimina los puntos de la lista */
+            margin: 0; /* Elimina el margen de la lista */
+            padding: 0; /* Elimina el relleno de la lista */
+        }
+        .menu li {
+
+            display: inline-block; /* Muestra los elementos de la lista en línea */
+            margin: 25px; /* Define el margen de los elementos de la lista */
+        }
+        .menu a {
+            text-decoration: none; /* Elimina el subrayado de los enlaces */
+            color: #ffffff; /* Define el color de los enlaces */
+        }
+
+
+
+        .carrusel {
+
+            margin: 10px;
+            width: 99%;
+            /*height: calc(100vh - 180px); /* Altura de la ventana menos la altura del panel */
+            height: 500px; 
+            overflow-y: hidden; /* Oculta el desplazamiento vertical */
+            
+            overflow-x: scroll; /* Permite el desplazamiento horizontal */
+            white-space: nowrap; /* Evita que las imágenes se rompan en varias líneas */
+            position: relative;
+
+            
+        }
+        .carrusel img {
+            height: 100%;
+            width: 100%;
+
+            position: absolute; /* Define la posición de la imagen como absoluta para poder moverla dentro del elemento padre */
+            left: 0; /* Define la posición inicial de la imagen a la izquierda del elemento padre */
+            transition: left 1s; /* Define la transición de la propiedad left como una duración de 1 segundo */
+
+        }
+
+
+
+
+    </style>
+    <script>
+        // Crea una variable para almacenar el índice de la imagen actual
+        let index = 0;
+        // Crea una función para cambiar la imagen del carrusel
+        function changeImage() {
+            // Obtiene todas las imágenes del carrusel
+            let images = document.querySelectorAll(".carrusel img");
+            // Obtiene el ancho de la ventana
+            let width = window.innerWidth;
+            // Recorre todas las imágenes
+            for (let i = 0; i < images.length; i++) {
+                // Calcula la posición de la imagen según el índice actual y el ancho de la ventana
+                let position = (i - index) * width;
+                // Asigna la posición a la propiedad left de la imagen
+                images[i].style.left = position + "px";
+            }
+            // Incrementa el índice en uno
+            index++;
+            // Si el índice es igual al número de imágenes, lo reinicia a cero
+            if (index == images.length) {
+                index = 0;
+            }
+        }
+        // Crea una variable para almacenar el intervalo de tiempo entre cada cambio de imagen (en milisegundos)
+        let interval = 3000;
+        // Llama a la función changeImage cada intervalo de tiempo
+        setInterval(changeImage, interval);
+    </script>
+
+</head>
+<body>
+
+    <div class="mmmenu">
+    <img src="http://www.dau.buap.mx/sites/all/themes/plantilla_1/images/escudo_blanco.png" height="65px" width="11%">
+    <div class="menu">
+        
+        <ul>
+             
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Opiniones sobre maestros</a></li>
+            <li><a href="#">Chismecito Buap</a></li>
+            <li><a href="#">Instalaciones educativas</a></li>
+            <li><a href="http://www.autoservicios.buap.mx/" target="_blank">Autoservicios</a></li>
+            <li><a href="https://bibliotecas.buap.mx/portal/" target="_blank">Bibliotecas Buap</a></li>
+            
+        </ul>
+    </div>
+    </div>
+
+
+
+    
+    <h1>Plataforma estudiantil</h1>
+    <div class="carrusel">
+        <img src="https://sintesis.com.mx/puebla/wp-content/uploads/2021/08/BUAP5-8-scaled.jpg" alt="Imagen 1">
+        <img src="https://sersoc.cs.buap.mx/img/fcc.jpg" alt="Imagen 2">
+        <img src="https://www.elsoldepuebla.com.mx/incoming/ocb3ud-fcc-buap-es-un-referente-para-la-formacion-de-rh.jpg/ALTERNATES/LANDSCAPE_1140/FCC-BUAP%20es%20un%20referente%20para%20la%20formaci%C3%B3n%20de%20RH.jpg" alt="Imagen 3">
+        <img src="https://www.elsoldepuebla.com.mx/doble-via/ooeahe-universidad-para-adultos-buap-abren-cursos-para-el-siguiente-periodo-aqui-los-detalles/ALTERNATES/LANDSCAPE_1140/Universidad%20para%20Adultos%20BUAP:%20Abren%20cursos%20para%20el%20siguiente%20periodo,%20aqu%C3%AD%20los%20detalles" alt="Imagen 4">
+        <img src="https://cdn2.telediario.mx/uploads/media/2023/02/20/aspectos-campus-buap-facebook-ccu.jpg" alt="Imagen 5">
+        <img src="zyro-image.png" alt="Imagen 6">
+    </div>
+
+    
+
+
+</body>
+</html>
+
